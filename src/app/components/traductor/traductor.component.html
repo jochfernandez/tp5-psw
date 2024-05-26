@@ -1,0 +1,57 @@
+<div class="container-fluid">
+  <h4 class="text-center mb-2 mt-2">Traductor</h4>
+  <button class="btn btn-dark btn-sm w-100 mb-2" (click)="obtenerIdiomas()">Obtener Idiomas</button>
+  <div class="row">
+    <div class="col-12">
+      <div class="dropdown">
+        <button class="text-start btn btn-primary dropdown-toggle mb-2 w-100 p-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          {{idiomaBase | primeraLetraMayuscula}}
+        </button>
+        <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton1">
+          <div class="row">
+            <div class="col-xl-1 col-lg-2 col-md-4 col-sm-6 col-12" *ngFor="let i of idiomas">
+              <li class="w-100" (click)="(seleccionarIdiomaBase(i.name,i.language))"><button class="text-center p-2 btn btn-outline-primary mb-2 w-100">{{i.name | primeraLetraMayuscula }}</button></li>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="form-floating mb-2">
+    <textarea class="form-control" placeholder="Ingrese texto a traducir" id="textoBase" style="height: 100px" [(ngModel)]="textoATraducir"></textarea>
+    <label for="textoBase">Frase en idioma base</label>
+  </div>
+  <div class="row mb-2 mt-2">
+    <div class="col-6">
+      <button class="btn btn-success w-100"(click)="traducir()">Traducir</button>
+    </div>
+    <div class="col-6">
+      <button class="btn btn-outline-success w-100" (click)="revetir()">Revertir</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="dropdown">
+        <button class="text-start btn btn-dark dropdown-toggle mb-2 w-100 p-3" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+          {{idiomaTraducido | primeraLetraMayuscula}}
+        </button>
+        <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton2">
+          <div class="row">
+            <div class="col-xl-1 col-lg-2  col-md-4 col-sm-6 col-12" *ngFor="let i of idiomas">
+              <li class="w-100" (click)="(seleccionarIdiomaATraducir(i.name,i.language))"><button class="text-center p-2 btn btn-outline-dark mb-2 w-100">{{i.name | primeraLetraMayuscula }}</button></li>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="card mb-2">
+    <div class="card-title ms-2 mt-2">
+      Traduccion
+    </div>
+    <div class="card-body">
+      {{textoTraducido.translatedText}}
+    </div>
+  </div>
+</div>
+

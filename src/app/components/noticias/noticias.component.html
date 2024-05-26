@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <h4 class="text-center mb-2 mt-2 titulo">Noticias</h4>
+  <button class="btn btn-sm btn-dark w-100 mb-2" (click)="obtenerNoticias()">Obtener Noticias</button>
+  <div class="row">
+    <div class="col-12 col-sm-6 col-md-4" *ngFor="let n of noticias">
+      <div class="card pb-0 m-2">
+        <img [src]="n.mainMedia[0].original.url" class="card-img-top" [alt]="n.mainMedia[0].original.alt">
+        <div class="card-body">
+          <h5 class="card-title mb-2">{{n.title}}</h5>
+        </div>
+        <div class="card-body">
+          <a class="btn btn-sm btn-dark w-100 mb-2 text-center" href="https://www.livescore.com{{n.url}}">Leer Más</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
