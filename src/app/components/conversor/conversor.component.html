@@ -1,0 +1,42 @@
+<div class="container-fluid">
+  <h4 class="text-center mb-2 mt-2">Conversor</h4>
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <div class="dropdown mb-2 mt-2">
+        <button class="btn btn-secondary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          {{ de }}
+        </button>
+        <ul class="dropdown-menu w-100 text-center">
+          <li><a class="dropdown-item w-100" (click)="seleccionarMonedaBase('USD')">USD</a></li>
+          <li><a class="dropdown-item w-100" (click)="seleccionarMonedaBase('ARS')">ARS</a></li>
+          <li><a class="dropdown-item w-100" (click)="seleccionarMonedaBase('NZD')">NZD</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <input type="text" class="form-control mt-2 mb-2" placeholder="Monto a convertir" [(ngModel)]="pesos">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <div class="dropdown mb-2 mt-2">
+        <button class="btn btn-secondary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          {{ hasta }}
+        </button>
+        <ul class="dropdown-menu w-100 text-center">
+          <li><a class="dropdown-item w-100" (click)="seleccionarMonedaDestino('USD')">USD</a></li>
+          <li><a class="dropdown-item w-100" (click)="seleccionarMonedaDestino('ARS')">ARS</a></li>
+          <li><a class="dropdown-item w-100" (click)="seleccionarMonedaDestino('NZD')">NZD</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <p class="mb-2 mt-2 p-2 border border-1 border-black rounded"> {{ dinero.result | currency }} </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-dark w-100" (click)="convertirDinero()">Convertir</button>
+    </div>
+  </div>
+</div>
