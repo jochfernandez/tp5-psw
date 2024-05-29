@@ -7,6 +7,7 @@ import {MusicaComponent} from "./components/musica/musica.component";
 import {IpComponent} from "./components/ip/ip.component";
 import {ConversorComponent} from "./components/conversor/conversor.component";
 import {QrComponent} from "./components/qr/qr.component";
+import {RecetaComponent} from "./components/receta/receta.component";
 
 export const routes: Routes = [
   {
@@ -32,6 +33,9 @@ export const routes: Routes = [
   },
   {
     path: 'qr', component : QrComponent
+  },
+  {
+    path: 'receta', component: RecetaComponent
   },
   {
     path: '**', pathMatch: 'full', redirectTo: 'inicio'
