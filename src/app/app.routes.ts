@@ -8,6 +8,7 @@ import {IpComponent} from "./components/ip/ip.component";
 import {ConversorComponent} from "./components/conversor/conversor.component";
 import {QrComponent} from "./components/qr/qr.component";
 import {RecetaComponent} from "./components/receta/receta.component";
+import {AutorComponent} from "./components/autor/autor.component";
 
 export const routes: Routes = [
   {
@@ -36,6 +37,11 @@ export const routes: Routes = [
   },
   {
     path: 'receta', component: RecetaComponent
+  },
+  {
+
+    path: 'autores', component: AutorComponent,
+
   },
   {
     path: '**', pathMatch: 'full', redirectTo: 'inicio'

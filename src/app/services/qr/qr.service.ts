@@ -12,15 +12,16 @@ export class QrService {
   solicitarQr(link : string) : Observable<Blob>{
     let httpOption = {
       headers : new HttpHeaders(({
-        'content-type': 'application/x-www-form-urlencoded',
-        'X-RapidAPI-Key': '19f387743dmshaea5dbab8882625p122650jsn1d067f5ac8c3',
-        'X-RapidAPI-Host': 'neutrinoapi-qr-code.p.rapidapi.com'
+        'x-rapidapi-key': 'd8ce3b2f5bmshd9c6ef221d79e83p118573jsn67c768439ad2',
+        'x-rapidapi-host': 'neutrinoapi-qr-code.p.rapidapi.com',
+        'Content-Type': 'application/json'
       })),
-      params: new HttpParams().set('content', link),
-      responseType: 'blob' as 'json'
+      responseType: 'blob' as 'json' // Aquí está el cambio
     }
-    // @ts-ignore
-    return this._http.post("https://neutrinoapi-qr-code.p.rapidapi.com/qr-code", null, httpOption);
+    const body = {
+      'content': link,
+    }
+    return this._http.post<Blob>("https://neutrinoapi-qr-code.p.rapidapi.com/qr-code", body, httpOption);
   }
 
 }
