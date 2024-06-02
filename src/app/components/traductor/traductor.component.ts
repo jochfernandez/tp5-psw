@@ -3,7 +3,6 @@ import {TraductorService} from "../../services/traductor/traductor.service";
 import {CommonModule} from "@angular/common";
 import {PrimeraLetraMayusculaPipe} from "../../pipes/traductor/primera-letra-mayuscula.pipe";
 import {FormsModule} from "@angular/forms";
-import {combineLatestAll} from "rxjs";
 
 @Component({
   selector: 'app-traductor',
