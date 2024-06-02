@@ -27,7 +27,7 @@
     </div>
   </div>
 
-  <div class="modal fade" id="DetalleAutor" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="DetalleAutor" tabindex="-1">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -43,7 +43,7 @@
                   <div class="card-body">Informacion: {{ biografia.info }}</div>
                 </div>
                 <div class="row mt-2">
-                  <div class="col-3 mt-2" *ngFor="let l of libros">
+                  <div class="col-3 mt-2 mb-2" *ngFor="let l of libros">
                     <div class="card">
                       <div class="card-body">
                         <p>Titulo: {{ l.name }}</p>
@@ -54,11 +54,11 @@
             </div>
           </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary rounded-5" data-bs-dismiss="modal">Cerrar</button>
+          <div class="modal-footer">
+           <button type="button" class="btn btn-primary rounded-5" data-bs-dismiss="modal">Cerrar</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
 </div>

@@ -15,13 +15,12 @@ export class RecetaComponent {
 
   recetas : Array<any> = [];
   detalles : Array<any> = [];
-  ingredientes : Array<any> = [];
+  pasos : Array<any> = [];
   obtenerRecetas(){
     this.recetaService.getRecetas().subscribe(
       (data) => {
         console.log(data);
         this.recetas = data;
-        this.ingredientes = data.Ingredientes;
         console.log(this.recetas);
       },
       (error) => {
@@ -35,8 +34,11 @@ export class RecetaComponent {
       (data) => {
         console.log(data);
         // @ts-ignore
-        this.detalles = data;
+        this.detalles = data.Ingredientes;
+        // @ts-ignore
+        this.pasos = data.Pasos;
         console.log(this.detalles);
+        console.log(this.pasos);
       },
       (error) => {
         console.log(error);
