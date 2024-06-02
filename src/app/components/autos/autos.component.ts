@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {AutoService} from "../../services/Auto/auto.service";
+import {AutoService} from "../../services/auto/auto.service";
 import {CommonModule} from "@angular/common";
 
 @Component({

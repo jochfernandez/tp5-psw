@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {TraductorService} from "../../services/Traductor/traductor.service";
+import {TraductorService} from "../../services/traductor/traductor.service";
 import {CommonModule} from "@angular/common";
 import {PrimeraLetraMayusculaPipe} from "../../pipes/traductor/primera-letra-mayuscula.pipe";
 import {FormsModule} from "@angular/forms";

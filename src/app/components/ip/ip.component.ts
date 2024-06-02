@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import {IpService} from "../../services/Ip/ip.service";
+import {IpService} from "../../services/ip/ip.service";
 import {FormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
-import {TimePipe} from "../../pipes/time.pipe";
+import {TimePipe} from "../../pipes/time/time.pipe";
 
 @Component({
   selector: 'app-ip',
